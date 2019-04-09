@@ -5,6 +5,9 @@ const logger = require('morgan');
 
 const app = express();
 
+// API routers
+const usersRouter = require('./routes/api/users');
+
 require('dotenv').config()
 require('./config/database');
 
@@ -15,6 +18,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // API Routes below
+app.use('/api', usersRouter);
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work
