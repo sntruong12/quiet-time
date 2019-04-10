@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage';
+import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginButton from '../../components/LoginButton/LoginButton';
 import SignUpButton from '../../components/SignUpButton/SignUpButton';
 import './App.css';
@@ -16,6 +17,10 @@ class App extends Component {
           />
           <Route exact path="/login" render={() => (
             <LoginPage />
+          )}
+          />
+          <Route exact path="/signup" render={() => (
+            <SignUpPage />
           )}
           />
         </Switch>
