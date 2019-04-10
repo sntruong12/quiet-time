@@ -4,10 +4,10 @@ Awareness is the first key step in progress. In order to gain awareness, one mus
 
 # Tech Stack
 
-MongoDB / Mongoose ODM
-ExpressJS
-ReactJS
-NodeJS
+1. MongoDB / Mongoose ODM
+2. ExpressJS
+3. ReactJS
+4. NodeJS
 
 # Getting Started
 
