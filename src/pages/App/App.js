@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
-import LoginButton from '../../components/LoginButton/LoginButton';
-import SignUpButton from '../../components/SignUpButton/SignUpButton';
+
 import './App.css';
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => (
-            <LoginButton />
+            <HomePage />
           )}
           />
           <Route exact path="/login" render={() => (
