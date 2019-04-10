@@ -1,11 +1,5 @@
 const User = require('../../models/user');
 
-const index = async (req, res) => {
-  res.json({
-    'message': 'api users route hit'
-  })
-}
-
 const create = async (req, res) => {
   try {
     let newUser = await User.create(req.body);
@@ -24,6 +18,5 @@ const create = async (req, res) => {
 }
 
 module.exports = {
-  index,
-  create,
+  create
 }
