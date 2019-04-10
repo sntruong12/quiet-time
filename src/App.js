@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import LoginButton from './components/LoginButton/LoginButton';
+import SignUpButton from './components/SignUpButton/SignUpButton';
 import './App.css';
 
 class App extends Component {
@@ -10,6 +12,8 @@ class App extends Component {
           <p>
             quiet time
           </p>
+          <LoginButton />
+          <SignUpButton />
         </header>
         <Switch>
           <Route path="/test" render={() => (
