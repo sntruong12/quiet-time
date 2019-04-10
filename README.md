@@ -1,9 +1,22 @@
-Introduction: A paragraph used to introduce interested parties to the project and needs to include one or more screenshots.
+#Quiet Time
 
-Technologies Used: A list of all technologies, libraries, APIs, etc. used in the project.
+Awareness is the first key step in progress. In order to gain awareness, one must be influenced by internal thoughts or be exposed to some stimulant in one's environment. The environment can be the people around you, the websites you frequent, or anything that is external to you. Quiet Time is an app that focuses on serving you quotes from thought leaders with the goal to have you become aware of the meaning of these quotes. The ultimate goal is to reset your mind and focus on these quotes to order to prompt you to be better in any way that you define progress. Quiet Time focuses on creating a unique experience that allows the users to be drawn in and to focus on the daily quote.
 
-Getting Started: Links to the project's planning (Trello board) and the deployed app on Heroku.
+#Tech Stack
 
-Unsolved Problems: List any unsolved issues.
+MongoDB / Mongoose ODM
+ExpressJS
+ReactJS
+NodeJS
 
-Future Enhancements: Identify future features and enhancements planned for the project.
+#Getting Started
+
+Links to the project's planning (Trello board) and the deployed app on Heroku.
+
+#Unsolved Problems 
+
+List any unsolved issues.
+
+#Future Enhancements
+
+Identify future features and enhancements planned for the project.
