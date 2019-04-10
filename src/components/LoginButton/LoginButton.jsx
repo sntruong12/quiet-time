@@ -1,8 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LoginButton = (props) => (
   <div>
-    <button>Login</button>
+    <Link to="/login">
+      <button>
+        Login
+      </button>
+    </Link>
   </div>
 );
 
