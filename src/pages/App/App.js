@@ -20,7 +20,7 @@ class App extends Component {
 
   /*----- Event Handlers -----*/
 
-  handleSignUp = () => {
+  handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
   }
 
@@ -49,13 +49,16 @@ class App extends Component {
             />
           )}
           />
-          <Route exact path="/login" render={() => (
-            <LoginPage />
+          <Route exact path="/login" render={({ history }) => (
+            <LoginPage 
+              handleSignupOrLogin={this.handleSignupOrLogin}
+              history={history}
+            />
           )}
           />
           <Route exact path="/signup" render={({ history }) => (
             <SignUpPage 
-              handleSignUp={this.handleSignUp}
+              handleSignupOrLogin={this.handleSignupOrLogin}
               history={history}
             />
           )}
