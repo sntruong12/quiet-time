@@ -18,6 +18,9 @@ class SignUpForm extends React.Component {
     e.preventDefault();
     try{
       userService.signup(this.state)
+      // allows the <App> to know a user has signed up
+      this.props.handleSignUp();
+      // routes the user to the home page
       this.props.history.push('/');
     }
     catch(err) {
