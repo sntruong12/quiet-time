@@ -17,7 +17,7 @@ class SignUpForm extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      userService.signup(this.state)
+      await userService.signup(this.state)
       // allows the <App> to know a user has signed up
       this.props.handleSignUp();
       // routes the user to the home page

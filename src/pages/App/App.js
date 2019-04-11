@@ -21,7 +21,7 @@ class App extends Component {
   /*----- Event Handlers -----*/
 
   handleSignUp = () => {
-    this.setState({user: userService.getUser});
+    this.setState({user: userService.getUser()});
   }
 
   handleLogout = () => {
