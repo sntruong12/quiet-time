@@ -19,12 +19,12 @@ class SignUpForm extends React.Component {
     try{
       await userService.signup(this.state)
       // allows the <App> to know a user has signed up
-      this.props.handleSignUp();
+      this.props.handleSignupOrLogin();
       // routes the user to the home page
       this.props.history.push('/');
     }
     catch(err) {
-
+      // implement some type of ui for error
     }
   }
 
