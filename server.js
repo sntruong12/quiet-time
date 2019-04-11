@@ -8,6 +8,7 @@ const app = express();
 
 // API routers
 const usersRouter = require('./routes/api/users');
+const teacherRouter = require('./routes/api/teachers');
 
 require('dotenv').config()
 require('./config/database');
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // API Routes below
 app.use('/api', usersRouter);
+app.use('/api', teacherRouter);
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work
