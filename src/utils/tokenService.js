@@ -6,6 +6,29 @@ const setToken = (token) => {
   }
 }
 
+// check if token is on localStorage
+const getToken = () => {
+  let token = localStorage.getItem('token');
+  if(token) {
+    // check if token is expired, remove if so
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    // JWT's exp is expressed in seconds, not milliseconds, so convert
+    if (payload.exp < Date.now() / 1000) {
+      localStorage.removeItem('token');
+      token = null
+    }
+  }
+  return token
+}
+
+// method that decodes the token, then extracts and returns the user object
+const getUserFromToken = () => {
+  const token = getToken();
+  return token ? JSON.parse(atob(token.split('.')[1])).user : null;
+}
+
 export default {
   setToken,
+  getToken,
+  getUserFromToken,
 }
