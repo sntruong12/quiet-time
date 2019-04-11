@@ -30,6 +30,11 @@ const signup = async (user) => {
   }
 }
 
+const getUser = () => {
+  return tokenService.getUserFromToken();
+}
+
 export default {
-  signup
+  signup,
+  getUser,
 };
