@@ -21,6 +21,11 @@ const getToken = () => {
   return token
 }
 
+// remove the token from localStorage
+const removeToken = () => {
+  localStorage.removeItem('token');
+}
+
 // method that decodes the token, then extracts and returns the user object
 const getUserFromToken = () => {
   const token = getToken();
@@ -30,5 +35,6 @@ const getUserFromToken = () => {
 export default {
   setToken,
   getToken,
+  removeToken,
   getUserFromToken,
 }
