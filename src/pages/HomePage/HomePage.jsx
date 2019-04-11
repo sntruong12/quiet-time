@@ -6,7 +6,9 @@ import SignUpButton from '../../components/SignUpButton/SignUpButton';
 const HomePage = (props) => {
   //check if user is logged in and render components conditionally
   let home = props.user ?
-    <LogoutButton />
+    <LogoutButton 
+      handleLogout={props.handleLogout}
+    />
     :
     <div>
       <LoginButton />
