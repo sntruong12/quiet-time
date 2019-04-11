@@ -3,7 +3,10 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 
 const LoginPage = (props) => (
     <div>
-      <LoginForm />
+      <LoginForm 
+        handleSignupOrLogin={props.handleSignupOrLogin}
+        history={props.history}
+      />
     </div>
 );
 
