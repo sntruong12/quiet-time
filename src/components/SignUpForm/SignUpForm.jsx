@@ -1,4 +1,5 @@
 import React from 'react';
+import userService from '../../utils/userService';
 
 class SignUpForm extends React.Component {
   state = {
@@ -16,10 +17,12 @@ class SignUpForm extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try{
-
+      console.log('signing up now')
+      userService.signup(this.state)
+      this.props.history.push('/');
     }
     catch(err) {
-      
+
     }
   }
 
@@ -57,8 +60,8 @@ class SignUpForm extends React.Component {
             required
           />
           <button 
-            type="button"
             disabled={this.isFormValid()}
+            onClick={this.handleSubmit}
           >
             sign up        
           </button>

@@ -19,8 +19,8 @@ class App extends Component {
             <LoginPage />
           )}
           />
-          <Route exact path="/signup" render={() => (
-            <SignUpPage />
+          <Route exact path="/signup" render={({ history }) => (
+            <SignUpPage history={history}/>
           )}
           />
         </Switch>

@@ -3,7 +3,9 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 
 const SignUpPage = (props) => (
   <div>
-    <SignUpForm />
+    <SignUpForm
+      history={props.history}
+    />
   </div>
 )
 
