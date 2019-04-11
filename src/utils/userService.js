@@ -2,7 +2,7 @@ const BASE_URL = '/api/users/';
 
 const signup = async (user) => {
   try {
-    let createUser = await fetch(
+    let createdUser = await fetch(
       BASE_URL,
       {
         method: 'POST',
@@ -14,8 +14,8 @@ const signup = async (user) => {
     )
     .then(response => response.json())
     .then(data => data)
-    console.log(createUser)
-    return createUser
+    console.log(createdUser)
+    return createdUser
   }
   catch(err) {
     console.log(err)
