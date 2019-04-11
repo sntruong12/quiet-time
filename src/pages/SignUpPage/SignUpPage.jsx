@@ -4,7 +4,7 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 const SignUpPage = (props) => (
   <div>
     <SignUpForm
-      handleSignUp={props.handleSignUp}
+      handleSignupOrLogin={props.handleSignupOrLogin}
       history={props.history}
     />
   </div>
