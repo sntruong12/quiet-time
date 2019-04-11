@@ -18,6 +18,13 @@ class App extends Component {
     }
   }
 
+  /*----- Event Handlers -----*/
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  }
+
   /*----- Lifecycle Methods -----*/
 
   async componentDidMount() {
@@ -34,6 +41,7 @@ class App extends Component {
           <Route exact path="/" render={() => (
             <HomePage 
               user={this.state.user}
+              handleLogout={this.handleLogout}
             />
           )}
           />
