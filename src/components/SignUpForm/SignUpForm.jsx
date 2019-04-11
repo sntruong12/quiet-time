@@ -17,7 +17,6 @@ class SignUpForm extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      console.log('signing up now')
       userService.signup(this.state)
       this.props.history.push('/');
     }

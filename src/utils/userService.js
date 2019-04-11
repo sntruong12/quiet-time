@@ -1,3 +1,5 @@
+import tokenService from './tokenService';
+
 const BASE_URL = '/api/users/';
 
 const signup = async (user) => {
@@ -12,9 +14,14 @@ const signup = async (user) => {
         body: JSON.stringify(user)
       }
     )
-    .then(response => response.json())
-    .then(data => data)
-    console.log(createdUser)
+    .then(res => {
+      if (res.ok) return res.json();
+      throw new Error('Email/Username already taken!');
+    })
+    // Parameter destructuring!
+    .then(({token}) => {
+      tokenService.setToken(token);
+    });
     return createdUser
   }
   catch(err) {
