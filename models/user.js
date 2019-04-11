@@ -24,6 +24,10 @@ const userSchema = new Schema({
     type: Number,
     default: 1,
     required: true
+  },
+  teacher: {
+    type: Schema.Types.ObjectId,
+    ref: 'Teacher'
   }
 }, {
   timestamps: true
