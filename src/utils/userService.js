@@ -34,7 +34,12 @@ const getUser = () => {
   return tokenService.getUserFromToken();
 }
 
+const logout = () => {
+  tokenService.removeToken();
+}
+
 export default {
   signup,
   getUser,
+  logout,
 };
