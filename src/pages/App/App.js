@@ -32,7 +32,9 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => (
-            <HomePage />
+            <HomePage 
+              user={this.state.user}
+            />
           )}
           />
           <Route exact path="/login" render={() => (
