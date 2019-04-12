@@ -3,7 +3,9 @@ import Dashboard from '../../components/Dashboard/Dashboard';
 
 const DashboardPage = (props) => (
   <div>
-    <Dashboard />
+    <Dashboard
+      user={props.user}
+    />
   </div>
 );
 
