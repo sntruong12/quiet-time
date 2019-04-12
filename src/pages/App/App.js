@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
+import DashboardPage from '../DashboardPage/DashboardPage';
 import userService from '../../utils/userService';
 import './App.css';
 
@@ -14,7 +15,7 @@ class App extends Component {
 
   getInitialState() {
     return {
-
+      
     }
   }
 
@@ -34,7 +35,7 @@ class App extends Component {
   async componentDidMount() {
     const user = userService.getUser();
     this.setState({
-      user,
+      user
     })
   }
 
@@ -61,6 +62,11 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
               history={history}
             />
+          )}
+          />
+          <Route exact path="/dashboard" render={() => (
+            // render dashboard page here
+            <DashboardPage />
           )}
           />
         </Switch>
