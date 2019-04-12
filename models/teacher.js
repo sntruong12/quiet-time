@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 const quoteSchema = new Schema({
   text: {
     type: String,
-    unique: true,
-    require: true
+    required: true
   }
 }, {
   timestamps: true
@@ -15,7 +14,6 @@ const quoteSchema = new Schema({
 const teacherSchema = new Schema({
   name: {
     type: String,
-    unique: true,
     required: true
   },
   quotes: [quoteSchema]
