@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
@@ -44,6 +44,9 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => (
+            userService.getUser() ?
+            <Redirect to="/dashboard" />
+            :
             <HomePage 
               user={this.state.user}
               handleLogout={this.handleLogout}
@@ -65,8 +68,9 @@ class App extends Component {
           )}
           />
           <Route exact path="/dashboard" render={() => (
-            // render dashboard page here
-            <DashboardPage />
+            <DashboardPage 
+              user={this.state.user}
+            />
           )}
           />
         </Switch>
