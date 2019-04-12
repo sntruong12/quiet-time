@@ -18,7 +18,6 @@ const index = async (req, res) => {
 }
 
 const create = async (req, res) => {
-  console.log('post teacher route hit')
   const teacher = new Teacher(req.body)
   try {
     await teacher.save();
