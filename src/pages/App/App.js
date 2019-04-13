@@ -10,7 +10,7 @@ import './App.css';
 class App extends Component {
   state = {
     ...this.getInitialState(),
-    user: null
+    user: {}
   }
 
   getInitialState() {
@@ -68,9 +68,12 @@ class App extends Component {
           )}
           />
           <Route exact path="/dashboard" render={() => (
+            userService.getUser() ?
             <DashboardPage 
               user={this.state.user}
             />
+            :
+            <Redirect to="/" />
           )}
           />
         </Switch>
