@@ -1,11 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import teacherService from '../../utils/teacherService';
 
 class Dashboard extends React.Component {
   state = {
-    teachers: []
+    teachers: [],
+    teacher: ''
   }
 
+  handleTeacherClick = (e) => {
+    this.setState({
+      teacher: e.target.innerHTML
+    })
+  }
+
+  /*----- Lifecycle Methods -----*/
   async componentDidMount() {
     const teachers = await teacherService.getAllTeachers();
     this.setState({
@@ -16,9 +25,17 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <h1>Welcome add user name here</h1>
+        <h1>Welcome {this.props.user.username}</h1>
         {this.state.teachers.map(t => (
-          <p>{t}</p>
+          <Link
+            to={{
+              pathname: "/meditation",
+              state: { teacher: this.state.teacher }
+            }}
+            teacher={this.state.teacher}
+          >
+            <p onClick={this.handleTeacherClick}>{t}</p>
+          </Link>
         ))}
       </div>
     )
