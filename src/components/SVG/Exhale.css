@@ -1,0 +1,13 @@
+#exhale {
+  animation-name: exhale;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  stroke-dasharray: 1000;
+}
+
+@keyframes exhale {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
