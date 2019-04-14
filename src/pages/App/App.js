@@ -4,6 +4,7 @@ import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
+import MeditationPage from '../MeditationPage/MeditationPage';
 import userService from '../../utils/userService';
 import './App.css';
 
@@ -71,6 +72,15 @@ class App extends Component {
             userService.getUser() ?
             <DashboardPage 
               user={this.state.user}
+            />
+            :
+            <Redirect to="/" />
+          )}
+          />
+          <Route exact path="/meditation" render={() => (
+            userService.getUser() ?
+            <MeditationPage 
+            
             />
             :
             <Redirect to="/" />
