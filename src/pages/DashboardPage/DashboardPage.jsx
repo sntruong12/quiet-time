@@ -5,6 +5,7 @@ const DashboardPage = (props) => (
   <div>
     <Dashboard
       user={props.user}
+      handleTeacherClick={props.handleTeacherClick}
     />
   </div>
 );
