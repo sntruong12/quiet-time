@@ -20,13 +20,7 @@ class Dashboard extends React.Component {
       <div>
         <h1>Welcome {this.props.user.username}</h1>
         {this.state.teachers.map(t => (
-          <Link
-            to={{
-              pathname: "/meditation",
-              state: { teacher: this.state.teacher }
-            }}
-            teacher={this.state.teacher}
-            >
+          <Link to="/meditation">
             <p onClick={this.props.handleTeacherClick}>{t}</p>
           </Link>
         ))}
