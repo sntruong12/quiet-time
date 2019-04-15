@@ -17,7 +17,7 @@ class App extends Component {
 
   getInitialState() {
     return {
-      
+
     }
   }
 
@@ -89,7 +89,7 @@ class App extends Component {
           <Route exact path="/meditation" render={() => (
             userService.getUser() ?
             <MeditationPage 
-
+              teacher={this.state.teacher}
             />
             :
             <Redirect to="/" />
