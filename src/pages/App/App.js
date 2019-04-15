@@ -5,7 +5,10 @@ import LoginPage from '../LoginPage/LoginPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import MeditationPage from '../MeditationPage/MeditationPage';
+import QuotePage from '../QuotePage/QuotePage';
 import userService from '../../utils/userService';
+import quoteService from '../../utils/quotesService';
+import miscellaneousService from '../../utils/miscellaneousService';
 import './App.css';
 
 class App extends Component {
@@ -13,6 +16,7 @@ class App extends Component {
     ...this.getInitialState(),
     user: {},
     teacher: '',
+    quote: ''
   }
 
   getInitialState() {
@@ -36,6 +40,17 @@ class App extends Component {
     console.log(e.target.innerHTML)
     this.setState({
       teacher: e.target.innerHTML
+    })
+  }
+
+  handleRandomQuote = async () => {
+    let quotes = await quoteService.getQuotes(this.state.teacher);
+    console.log(quotes)
+    let length = quotes.length;
+    let randomIndex = miscellaneousService.randomIndexForArray(length);
+    console.log(quotes[randomIndex])
+    this.setState({
+      quote: quotes[randomIndex]
     })
   }
 
@@ -89,7 +104,17 @@ class App extends Component {
           <Route exact path="/meditation" render={() => (
             userService.getUser() ?
             <MeditationPage 
-              teacher={this.state.teacher}
+              user={this.state.user}
+            />
+            :
+            <Redirect to="/" />
+          )}
+          />
+          <Route exact path="/quote" render={() => (
+            userService.getUser() ?
+            <QuotePage
+              user={this.state.user}
+              handleRandomQuote={this.handleRandomQuote}
             />
             :
             <Redirect to="/" />
