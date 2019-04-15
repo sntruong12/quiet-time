@@ -6,6 +6,7 @@ const QuotePage = (props) => (
     <Quote 
       user={props.user}
       handleRandomQuote={props.handleRandomQuote}
+      quote={props.quote}
     />
   </div>
 )
