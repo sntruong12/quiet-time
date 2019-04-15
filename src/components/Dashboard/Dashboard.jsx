@@ -4,14 +4,7 @@ import teacherService from '../../utils/teacherService';
 
 class Dashboard extends React.Component {
   state = {
-    teachers: [],
-    teacher: ''
-  }
-
-  handleTeacherClick = (e) => {
-    this.setState({
-      teacher: e.target.innerHTML
-    })
+    teachers: []
   }
 
   /*----- Lifecycle Methods -----*/
@@ -33,8 +26,8 @@ class Dashboard extends React.Component {
               state: { teacher: this.state.teacher }
             }}
             teacher={this.state.teacher}
-          >
-            <p onClick={this.handleTeacherClick}>{t}</p>
+            >
+            <p onClick={this.props.handleTeacherClick}>{t}</p>
           </Link>
         ))}
       </div>
