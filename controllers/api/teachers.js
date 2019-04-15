@@ -2,7 +2,7 @@ const Teacher = require('../../models/teacher');
 
 const index = async (req, res) => {
   try {
-    const teachers = await Teacher.find({}).then(res => res);
+    const teachers = await Teacher.find({});
     res.status(200)
       .json(teachers)
   }
