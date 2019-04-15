@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import Inhale from '../SVG/Inhale';
 import Hold from '../SVG/Hold';
 import Exhale from '../SVG/Exhale';
@@ -11,14 +12,15 @@ class Meditation extends React.Component {
       renderInhale: false,
       renderHold: false,
       renderExhale: false,
-      renderFinalMessage: false
+      renderFinalMessage: false,
+      redirect: false
     }
     
     this.interval = null
   }
 
   /*----- Lifecycle Methods -----*/
-  async componentDidMount() {
+  componentDidMount() {
     this.interval = setTimeout(() => {
       this.setState({
         renderInitialMessage: false,
@@ -30,19 +32,25 @@ class Meditation extends React.Component {
         renderInhale: false,
         renderHold: true
       })
-    }, 16500)
+    }, 16000)
     this.interval = setTimeout(() => {
       this.setState({
         renderHold: false,
         renderExhale: true
       })
-    }, 24500)
+    }, 24000)
     this.interval = setTimeout(() => {
       this.setState({
         renderExhale: false,
         renderFinalMessage: true
       })
-    }, 34500)
+    }, 34000)
+    this.interval = setTimeout(() => {
+      this.setState({
+        renderFinalMessage: false,
+        redirect: true
+      })
+    }, 44000)
   }
 
   componentWillUnmount() {
@@ -53,7 +61,7 @@ class Meditation extends React.Component {
     return (
       <div>
         { this.state.renderInitialMessage ?
-          <h3>let's meditate</h3> 
+          <h3>let us meditate</h3> 
           :
           null
         }
@@ -61,10 +69,11 @@ class Meditation extends React.Component {
         { this.state.renderHold ? <Hold /> : null }
         { this.state.renderExhale ? <Exhale /> : null }
         { this.state.renderFinalMessage ?
-          <h3>feel focus grasshopper?</h3> 
+          <h3>feeling focused grasshopper?</h3> 
           :
           null
         }
+        { this.state.redirect ? <Redirect to="/quote"/> : null }
       </div>
     )
   }
