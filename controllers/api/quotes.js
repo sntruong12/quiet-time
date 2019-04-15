@@ -2,8 +2,8 @@ const Teacher = require('../../models/teacher');
 
 const index = async (req, res) => {
   const name = req.params.t_name
-  const teacher = await Teacher.findOne({name: name})
   try {
+    const teacher = await Teacher.findOne({name: name})
     res.status(200)
       .json(teacher.quotes);
   }
@@ -19,8 +19,9 @@ const index = async (req, res) => {
 }
 
 const create = async (req, res) => {
-  const teacher = await Teacher.findById(req.params.id)
+  const name = req.params.t_name
   try {
+    const teacher = await Teacher.findOne({name: name})
     teacher.quotes.push(req.body);
     teacher.save();
     
