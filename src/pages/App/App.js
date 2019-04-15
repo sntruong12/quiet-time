@@ -11,7 +11,8 @@ import './App.css';
 class App extends Component {
   state = {
     ...this.getInitialState(),
-    user: {}
+    user: {},
+    teacher: '',
   }
 
   getInitialState() {
@@ -29,6 +30,13 @@ class App extends Component {
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
+  }
+
+  handleTeacherClick = (e) => {
+    console.log(e.target.innerHTML)
+    this.setState({
+      teacher: e.target.innerHTML
+    })
   }
 
   /*----- Lifecycle Methods -----*/
@@ -72,6 +80,7 @@ class App extends Component {
             userService.getUser() ?
             <DashboardPage 
               user={this.state.user}
+              handleTeacherClick={this.handleTeacherClick}
             />
             :
             <Redirect to="/" />
@@ -80,7 +89,7 @@ class App extends Component {
           <Route exact path="/meditation" render={() => (
             userService.getUser() ?
             <MeditationPage 
-            
+
             />
             :
             <Redirect to="/" />
