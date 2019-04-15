@@ -54,8 +54,25 @@ const create = async (req, res) => {
   }
 }
 
+const deleteTeacher = async (req, res) => {
+  try {
+    const teacher = await Teacher.findOneAndDelete( {name: req.params.t_name} )
+    res.status(200)
+      .json(teacher)
+  }
+  catch(err) {
+    res.status(500)
+      .json({
+        status: 500,
+        message: 'Unable to delete teacher',
+        error: err.errmsg
+      })
+  }
+}
+
 module.exports = {
   index,
   show,
-  create
+  create,
+  delete: deleteTeacher
 }
