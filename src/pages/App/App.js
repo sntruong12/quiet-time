@@ -45,13 +45,11 @@ class App extends Component {
 
   handleRandomQuote = async () => {
     let quotes = await quoteService.getQuotes(this.state.teacher);
-    console.log(quotes)
     let length = quotes.length;
     let randomIndex = miscellaneousService.randomIndexForArray(length);
-    console.log(quotes[randomIndex])
     this.setState({
       quote: quotes[randomIndex]
-    })
+    });
   }
 
   /*----- Lifecycle Methods -----*/
@@ -115,6 +113,7 @@ class App extends Component {
             <QuotePage
               user={this.state.user}
               handleRandomQuote={this.handleRandomQuote}
+              quote={this.state.quote}
             />
             :
             <Redirect to="/" />
