@@ -13,16 +13,9 @@ import './App.css';
 
 class App extends Component {
   state = {
-    ...this.getInitialState(),
     user: {},
     teacher: '',
     quote: ''
-  }
-
-  getInitialState() {
-    return {
-
-    }
   }
 
   /*----- Event Handlers -----*/
