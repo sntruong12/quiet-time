@@ -51,7 +51,25 @@ function createJWT(user) {
   );
 }
 
+const addlevel = async (req,res) => {
+  try {
+    const user = await User.findOneAndUpdate({ email: req.params.email }, req.body, { new: true })
+    res.status(200)
+      .json(user)
+  }
+  catch(err) {
+    console.log(err)
+    res.status(500)
+      .json({
+        status: 500,
+        message: 'Unable to update user',
+        error: err.errmsg
+      })
+  }
+}
+
 module.exports = {
   signup,
-  login
+  login,
+  addlevel
 };
