@@ -1,30 +1,21 @@
 import React from 'react';
 
 class Quote extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      renderInitialMessage: true,
-      renderFinalMessage: false
-    }
-    
-    this.interval = null
+  state = {
+    renderInitialMessage: true,
+    renderFinalMessage: false
   }
-
+  
   componentDidMount() {
     // gets random quote from selected teacher
     this.props.handleRandomQuote();
 
-    this.interval = setTimeout(() => {
+    setTimeout(() => {
       this.setState({
         renderInitialMessage: false,
         renderFinalMessage: true
       })
     }, 10000)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   render() {
