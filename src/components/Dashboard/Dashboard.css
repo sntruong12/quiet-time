@@ -1,0 +1,14 @@
+.dashboard-div div {
+  margin-top: 50px;
+  border: 2px white solid;
+}
+
+.dashboard-link {
+  text-decoration: none;
+  color: white;
+}
+
+.dashboard-link:hover {
+  text-decoration: wavy;
+  color: white;
+}
