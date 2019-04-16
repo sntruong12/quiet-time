@@ -32,9 +32,15 @@ const getUserFromToken = () => {
   return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
 
+const getAdminFromToken = () => {
+  const token = getToken();
+  return token ? JSON.parse(atob(token.split('.')[1])).user.admin : null;
+}
+
 export default {
   setToken,
   getToken,
   removeToken,
   getUserFromToken,
+  getAdminFromToken
 }

@@ -34,6 +34,10 @@ const getUser = () => {
   return tokenService.getUserFromToken();
 }
 
+const getAdmin = () => {
+  return tokenService.getAdminFromToken();
+}
+
 const logout = () => {
   tokenService.removeToken();
 }
@@ -63,9 +67,39 @@ const login = async (creds) => {
   }
 }
 
+const getAllUsers = async () => {
+  const users = await fetch(
+      BASE_URL,
+      {
+        mode: "cors",
+        headers: {
+          'Authorization': 'Bearer ' + tokenService.getToken()
+        }
+      }
+    ).then(data => data.json())
+  return users
+}
+
+const deleteUser = async(email) => {
+  const user = await fetch(
+    BASE_URL + email,
+    {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      }
+    }
+  ).then(data => data.json())
+  return user
+}
+
 export default {
   signup,
   getUser,
+  getAdmin,
   logout,
-  login
+  login,
+  getAllUsers,
+  deleteUser
 };
