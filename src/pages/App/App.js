@@ -105,8 +105,9 @@ class App extends Component {
             userService.getUser() ?
             <QuotePage
               user={this.state.user}
-              handleRandomQuote={this.handleRandomQuote}
               quote={this.state.quote}
+              teacher={this.state.teacher}
+              handleRandomQuote={this.handleRandomQuote}
             />
             :
             <Redirect to="/" />
