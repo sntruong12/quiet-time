@@ -1,0 +1,16 @@
+.quote-message {
+  animation-name: quote;
+  animation-duration: 10s
+}
+
+@keyframes quote {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

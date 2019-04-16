@@ -1,4 +1,5 @@
 import React from 'react';
+import './Quote.css';
 
 class Quote extends React.Component {
   state = {
@@ -22,12 +23,12 @@ class Quote extends React.Component {
     return (
       <div>
         { this.state.renderInitialMessage ?
-          <h3>focus your energy in this next message.</h3>
+          <h3>focus your energy on this next message.</h3>
           :
           null
         }
         { this.state.renderFinalMessage ?
-        <div>
+        <div className="quote-message">
           <p>The wise {this.props.teacher} once said...</p>  
           <p>"{this.props.quote}"</p>
         </div>
