@@ -15,14 +15,14 @@ class Quote extends React.Component {
         renderInitialMessage: false,
         renderFinalMessage: true
       })
-    }, 10000)
+    }, 8000)
   }
 
   render() {
     return (
       <div>
         { this.state.renderInitialMessage ?
-          <h3>focus your energy child in this next message.</h3>
+          <h3>focus your energy in this next message.</h3>
           :
           null
         }
