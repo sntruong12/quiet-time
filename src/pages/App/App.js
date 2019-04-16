@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   handleLogout = () => {
+    console.log('logging out')
     userService.logout();
     this.setState({ user: null });
   }
@@ -59,9 +60,6 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => (
-            userService.getUser() ?
-            <Redirect to="/dashboard" />
-            :
             <HomePage 
               user={this.state.user}
               handleLogout={this.handleLogout}
