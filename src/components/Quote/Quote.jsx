@@ -5,7 +5,7 @@ class Quote extends React.Component {
     renderInitialMessage: true,
     renderFinalMessage: false
   }
-  
+
   componentDidMount() {
     // gets random quote from selected teacher
     this.props.handleRandomQuote();
@@ -27,7 +27,10 @@ class Quote extends React.Component {
           null
         }
         { this.state.renderFinalMessage ?
-          <p>{this.props.quote}</p>  
+        <div>
+          <p>The wise {this.props.teacher} once said...</p>  
+          <p>"{this.props.quote}"</p>
+        </div>
           :
           null
         }
