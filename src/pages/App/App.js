@@ -6,6 +6,7 @@ import SignUpPage from '../SignUpPage/SignUpPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import MeditationPage from '../MeditationPage/MeditationPage';
 import QuotePage from '../QuotePage/QuotePage';
+import AdminPage from '../AdminPage/AdminPage';
 import userService from '../../utils/userService';
 import quoteService from '../../utils/quotesService';
 import miscellaneousService from '../../utils/miscellaneousService';
@@ -30,7 +31,6 @@ class App extends Component {
   }
 
   handleTeacherClick = (e) => {
-    console.log(e.target.innerHTML)
     this.setState({
       teacher: e.target.innerHTML
     })
@@ -109,6 +109,13 @@ class App extends Component {
               teacher={this.state.teacher}
               handleRandomQuote={this.handleRandomQuote}
             />
+            :
+            <Redirect to="/" />
+          )}
+          />
+          <Route exact path="/admin" render={() => (
+            userService.getAdmin() ?
+            <AdminPage />
             :
             <Redirect to="/" />
           )}
