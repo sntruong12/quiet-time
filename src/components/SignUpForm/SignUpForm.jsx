@@ -21,7 +21,7 @@ class SignUpForm extends React.Component {
       // allows the <App> to know a user has signed up
       this.props.handleSignupOrLogin();
       // routes the user to the home page
-      this.props.history.push('/');
+      this.props.history.push('/dashboard');
     }
     catch(err) {
       // implement some type of ui for error

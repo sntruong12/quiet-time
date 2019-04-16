@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
       // allows the <App> to know a user logged in
       this.props.handleSignupOrLogin();
       // routes the user to the home page
-      this.props.history.push('/');
+      this.props.history.push('/dashboard');
     }
     catch(err) {
       // implement some type of ui for error
