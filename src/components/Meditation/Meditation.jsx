@@ -45,14 +45,18 @@ class Meditation extends React.Component {
         renderFinalMessage: false,
         redirect: true
       })
-    }, 44000)
+    }, 42000)
   }
 
   render() {
     return (
       <div>
         { this.state.renderInitialMessage ?
-          <h3>let us meditate</h3> 
+          <div>
+            <h3>let us meditate</h3>
+            <hr/>
+            <h5>this will be a breathing exercise</h5>
+          </div>
           :
           null
         }
@@ -60,7 +64,11 @@ class Meditation extends React.Component {
         { this.state.renderHold ? <Hold /> : null }
         { this.state.renderExhale ? <Exhale /> : null }
         { this.state.renderFinalMessage ?
-          <h3>feeling focused grasshopper?</h3> 
+          <div>
+            <h3>feeling focused grasshopper?</h3>
+            <hr/>
+            <h5>now that your relaxed and focused...</h5>
+          </div>
           :
           null
         }
