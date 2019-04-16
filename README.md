@@ -28,4 +28,4 @@ Here is a [link](https://trello.com/b/EbNgrSA7/quiet-time) to the Trello.
 ## Future Enhancements
 
 1. Polish the animations.
-2. Create a better UX for the user.
+2. Create a better UX for the user by polishing the animations. Try to do some ease in animations for example.
