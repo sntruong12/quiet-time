@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   handleLogout = () => {
-    console.log('logging out')
     userService.logout();
     this.setState({ user: null });
   }
