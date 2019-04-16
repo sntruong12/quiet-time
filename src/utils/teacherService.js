@@ -1,10 +1,19 @@
+import tokenService from './tokenService';
+
 const BASE_URL = '/api/teachers/';
 
 // returns an array of all the teachers name
 const getAllTeachers = async () => {
   let teacherNames = [];
   try {
-    let teachers = await fetch(BASE_URL, {mode: "cors"}).then(res => res.json()).then(data => data);
+    let teachers = await fetch(BASE_URL, 
+      {
+        mode: "cors",
+        headers: {
+          'Authorization': 'Bearer ' + tokenService.getToken()
+        }
+      }
+    ).then(res => res.json()).then(data => data);
     teachers.forEach(t => {
       teacherNames.push(t.name)
     });
